@@ -1,16 +1,26 @@
 (function(){
  var r=document.documentElement;
- try{var l=localStorage.getItem('lang');if(l)r.lang=l;var t=localStorage.getItem('theme');if(t)r.setAttribute('data-theme',t)}catch(e){}
- if(!r.getAttribute('data-theme')){r.setAttribute('data-theme',matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}
+ try{var l=localStorage.getItem('lang');if(l)r.lang=l;if(localStorage.getItem('theme')==='light')r.setAttribute('data-theme','light')}catch(e){}
+ var menu=document.getElementById('menu'),openBtn=document.getElementById('open');
+ function setMenu(on){
+  menu.classList.toggle('open',on);
+  menu.setAttribute('aria-hidden',on?'false':'true');
+  openBtn.setAttribute('aria-expanded',on?'true':'false');
+  document.body.style.overflow=on?'hidden':'';
+ }
+ openBtn.onclick=function(){setMenu(true)};
+ document.getElementById('close').onclick=function(){setMenu(false)};
+ menu.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
  document.getElementById('lang').onclick=function(){r.lang=r.lang==='uk'?'en':'uk';try{localStorage.setItem('lang',r.lang)}catch(e){}};
  document.getElementById('theme').onclick=function(){
-  var dark=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
-  var n=dark?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}
+  var light=r.getAttribute('data-theme')==='light';
+  if(light)r.removeAttribute('data-theme');else r.setAttribute('data-theme','light');
+  try{localStorage.setItem('theme',light?'dark':'light')}catch(e){}
  };
- var els=document.querySelectorAll('.card,.steps div,.contact,section h2,.note');
+ var els=document.querySelectorAll('.kicker,.intro,.ghost,.lead,.grid>div,.price,.step,.big,.note');
  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.style.transitionDelay=''},1000)}})},{threshold:.15});
-  els.forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=((i%3)*0.1)+'s';io.observe(el)});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  els.forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=((i%3)*0.08)+'s';io.observe(el)});
  }
 })();
-
