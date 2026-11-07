@@ -5,83 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Code Dev — боти, сайти, скрипти</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322d3ee'/%3E%3Cstop offset='1' stop-color='%2334d399'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%230b1220'/%3E%3Cg fill='none' stroke='url(%23g)' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M24 20L12 32l12 12M40 20l12 12-12 12M36 14l-8 36'/%3E%3C/g%3E%3C/svg%3E">
-<style>
-:root{--bg:#f6f8fc;--card:#fff;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--a1:#0891b2;--a2:#059669;--hero1:#e0f2fe;--hero2:#dcfce7;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220;--card:#111b30;--text:#f1f5f9;--muted:#94a3b8;--line:#22304d;--a1:#22d3ee;--a2:#34d399;--hero1:#10234a;--hero2:#0b2a2a;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0b1220;--card:#111b30;--text:#f1f5f9;--muted:#94a3b8;--line:#22304d;--a1:#22d3ee;--a2:#34d399;--hero1:#10234a;--hero2:#0b2a2a;color-scheme:dark}
-html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-html[lang="uk"] [lang="en"],html[lang="en"] [lang="uk"]{display:none}
-.wrap{max-width:960px;margin:0 auto;padding:0 20px}
-header{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:12px}
-.logo{font-weight:800;font-size:20px;letter-spacing:.5px}
-.logo b{background:linear-gradient(90deg,var(--a1),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.tools button{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font:inherit;font-size:14px;cursor:pointer;margin-left:6px}
-.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));border:1px solid var(--line);border-radius:24px;padding:48px 28px;margin-top:8px}
-.hero h1{font-size:clamp(28px,6vw,46px);line-height:1.15;margin:0 0 14px}
-.hero h1 span{background:linear-gradient(90deg,var(--a1),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{color:var(--muted);max-width:560px;margin:0 0 24px;font-size:18px}
-.btn{display:inline-block;padding:13px 24px;border-radius:12px;font-weight:700;text-decoration:none;color:#06222a;background:linear-gradient(90deg,var(--a1),var(--a2))}
-.btn.alt{background:transparent;color:var(--text);border:1px solid var(--line);margin-left:8px}
-section{padding:44px 0 6px}
-h2{font-size:26px;margin:0 0 18px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
-.card h3{margin:8px 0 6px;font-size:19px}
-.card p,.card li{color:var(--muted);margin:0}
-.ico{font-size:30px}
-.price{font-size:28px;font-weight:800;margin:6px 0}
-.price small{font-size:14px;font-weight:400;color:var(--muted)}
-.card ul{padding-left:18px;margin:10px 0 0}
-.steps{counter-reset:s;display:grid;gap:12px}
-.steps div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 56px;position:relative}
-.steps div::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:linear-gradient(90deg,var(--a1),var(--a2));color:#06222a;font-weight:800;display:grid;place-items:center}
-.contact{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:36px 20px}
-.contact p{color:var(--muted);max-width:520px;margin:0 auto 20px}
-footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 24px}
-.note{font-size:13px;color:var(--muted);margin-top:12px}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;background-size:200% 200%;animation:shift 14s ease infinite}
-.hero-vis{position:relative;min-height:340px;display:grid;place-items:center}
-.phone{width:240px;background:var(--card);border:2px solid var(--line);border-radius:30px;padding:14px;box-shadow:0 24px 50px rgba(8,145,178,.28);animation:float 5s ease-in-out infinite;min-height:300px}
-.ph-top{display:flex;align-items:center;gap:8px;padding-bottom:10px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
-.dot{width:28px;height:28px;border-radius:50%;background:linear-gradient(90deg,var(--a1),var(--a2));display:grid;place-items:center;font-size:14px}
-.msg{max-width:88%;padding:8px 12px;border-radius:14px;font-size:13px;margin-top:10px;animation:pop 11s infinite backwards}
-.me{margin-left:auto;background:linear-gradient(90deg,var(--a1),var(--a2));color:#06222a;font-weight:600}
-.bot{background:var(--bg);border:1px solid var(--line)}
-.m1{animation-delay:.4s}.m2{animation-delay:1.6s}.m3{animation-delay:2.8s}.m4{animation-delay:4s}
-.kb{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
-.kb i{font-style:normal;font-size:12px;padding:4px 9px;border-radius:9px;border:1px solid var(--a1);color:var(--a1)}
-.badge{position:absolute;font-weight:800;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 12px;box-shadow:0 10px 24px rgba(0,0,0,.12);animation:float 4s ease-in-out infinite}
-.b1{top:10px;right:0;color:var(--a1);animation-delay:.5s}.b2{bottom:14px;left:0;animation-delay:1.2s}
-.rv{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
-.rv.in{opacity:1;transform:none}
-.card,.steps div{transition:opacity .6s ease,transform .6s ease,box-shadow .25s ease,border-color .25s ease}
-.card.rv.in:hover,.steps div.rv.in:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(8,145,178,.2);border-color:var(--a1)}
-.btn{transition:transform .2s ease,box-shadow .2s ease}
-.btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 10px 24px rgba(8,145,178,.35)}
-.ico{display:inline-block;animation:float 4.5s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@keyframes shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-@keyframes pop{0%{opacity:0;transform:translateY(10px) scale(.95)}6%,88%{opacity:1;transform:none}96%,100%{opacity:0}}
-@media (max-width:720px){.hero{grid-template-columns:1fr;padding:36px 20px}.hero-vis{min-height:320px}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
-.tools{display:flex;align-items:center}
-#theme{width:42px;height:42px;padding:0;display:grid;place-items:center;border-radius:50%;transition:transform .4s ease,border-color .2s ease,color .2s ease}
-#theme:hover{transform:rotate(25deg);border-color:var(--a1);color:var(--a1)}
-#theme svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-#theme .sun{display:none}
-:root[data-theme="dark"] #theme .sun{display:block}
-:root[data-theme="dark"] #theme .moon{display:none}
-.steps div::before{top:15px;transform:none}
-.steps details summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:30px}
-.steps details summary::-webkit-details-marker{display:none}
-.steps details summary::after{content:"+";color:var(--a1);font-weight:800;font-size:22px;line-height:1;transition:transform .3s ease}
-.steps details[open] summary::after{transform:rotate(45deg)}
-.steps details p{margin:10px 0 2px;color:var(--muted);animation:fade .4s ease}
-@keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
@@ -112,18 +36,18 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 24px}
 <section id="services">
  <h2><span lang="uk">Послуги</span><span lang="en">Services</span></h2>
  <div class="grid">
-  <div class="card"><div class="ico">🤖</div><h3><span lang="uk">Боти</span><span lang="en">Bots</span></h3><p><span lang="uk">Telegram і Discord: меню, кнопки, автовідповіді, FAQ, прийом заявок, сповіщення, Google Таблиці.</span><span lang="en">Telegram and Discord: menus, buttons, auto replies, FAQ, order forms, notifications, Google Sheets.</span></p></div>
-  <div class="card"><div class="ico">🌐</div><h3><span lang="uk">Сайти-візитки</span><span lang="en">One-page sites</span></h3><p><span lang="uk">Адаптивні лендінги з формою заявки. Гарно виглядають на телефоні та комп’ютері.</span><span lang="en">Responsive landing pages with a request form. Look great on phones and computers.</span></p></div>
-  <div class="card"><div class="ico">⚙️</div><h3><span lang="uk">Скрипти</span><span lang="en">Scripts</span></h3><p><span lang="uk">Python: обробка Excel і CSV, сортування файлів, збір відкритих даних, автоматизація рутини.</span><span lang="en">Python: Excel and CSV processing, file sorting, public data collection, routine automation.</span></p></div>
+  <div class="card" data-target="d-bots"><div class="ico">🤖</div><h3><span lang="uk">Боти</span><span lang="en">Bots</span></h3><p><span lang="uk">Telegram і Discord: меню, кнопки, автовідповіді, FAQ, прийом заявок, сповіщення, Google Таблиці.</span><span lang="en">Telegram and Discord: menus, buttons, auto replies, FAQ, order forms, notifications, Google Sheets.</span></p></div>
+  <div class="card" data-target="d-sites"><div class="ico">🌐</div><h3><span lang="uk">Сайти-візитки</span><span lang="en">One-page sites</span></h3><p><span lang="uk">Адаптивні лендінги з формою заявки. Гарно виглядають на телефоні та комп’ютері.</span><span lang="en">Responsive landing pages with a request form. Look great on phones and computers.</span></p></div>
+  <div class="card" data-target="d-scripts"><div class="ico">⚙️</div><h3><span lang="uk">Скрипти</span><span lang="en">Scripts</span></h3><p><span lang="uk">Python: обробка Excel і CSV, сортування файлів, збір відкритих даних, автоматизація рутини.</span><span lang="en">Python: Excel and CSV processing, file sorting, public data collection, routine automation.</span></p></div>
  </div>
 </section>
 
 <section id="prices">
  <h2><span lang="uk">Ціни</span><span lang="en">Pricing</span></h2>
  <div class="grid">
-  <div class="card"><h3><span lang="uk">Простий бот</span><span lang="en">Simple bot</span></h3><div class="price"><small><span lang="uk">від</span><span lang="en">from</span></small> $10</div><ul><li><span lang="uk">Меню та до 5 команд</span><span lang="en">Menu and up to 5 commands</span></li><li><span lang="uk">Вихідний код</span><span lang="en">Source code</span></li><li><span lang="uk">2-4 дні</span><span lang="en">2-4 days</span></li></ul></div>
-  <div class="card"><h3><span lang="uk">Бот із заявками</span><span lang="en">Order bot</span></h3><div class="price"><small><span lang="uk">від</span><span lang="en">from</span></small> $25</div><ul><li><span lang="uk">Прийом заявок</span><span lang="en">Order and request form</span></li><li><span lang="uk">Сповіщення власнику</span><span lang="en">Owner notifications</span></li><li><span lang="uk">3-5 днів</span><span lang="en">3-5 days</span></li></ul></div>
-  <div class="card"><h3><span lang="uk">Сайт-візитка</span><span lang="en">One-page site</span></h3><div class="price"><small><span lang="uk">від</span><span lang="en">from</span></small> $20</div><ul><li><span lang="uk">Адаптивна сторінка</span><span lang="en">Responsive page</span></li><li><span lang="uk">Форма заявки</span><span lang="en">Request form</span></li><li><span lang="uk">3-6 днів</span><span lang="en">3-6 days</span></li></ul></div>
+  <div class="card" data-target="p-simple"><h3><span lang="uk">Простий бот</span><span lang="en">Simple bot</span></h3><div class="price"><small><span lang="uk">від</span><span lang="en">from</span></small> $10</div><ul><li><span lang="uk">Меню та до 5 команд</span><span lang="en">Menu and up to 5 commands</span></li><li><span lang="uk">Вихідний код</span><span lang="en">Source code</span></li><li><span lang="uk">2-4 дні</span><span lang="en">2-4 days</span></li></ul></div>
+  <div class="card" data-target="p-order"><h3><span lang="uk">Бот із заявками</span><span lang="en">Order bot</span></h3><div class="price"><small><span lang="uk">від</span><span lang="en">from</span></small> $25</div><ul><li><span lang="uk">Прийом заявок</span><span lang="en">Order and request form</span></li><li><span lang="uk">Сповіщення власнику</span><span lang="en">Owner notifications</span></li><li><span lang="uk">3-5 днів</span><span lang="en">3-5 days</span></li></ul></div>
+  <div class="card" data-target="p-site"><h3><span lang="uk">Сайт-візитка</span><span lang="en">One-page site</span></h3><div class="price"><small><span lang="uk">від</span><span lang="en">from</span></small> $20</div><ul><li><span lang="uk">Адаптивна сторінка</span><span lang="en">Responsive page</span></li><li><span lang="uk">Форма заявки</span><span lang="en">Request form</span></li><li><span lang="uk">3-6 днів</span><span lang="en">3-6 days</span></li></ul></div>
  </div>
  <p class="note"><span lang="uk">Точна ціна залежить від завдання. Напишіть, що потрібно, і я чесно скажу вартість та терміни.</span><span lang="en">The exact price depends on the task. Tell me what you need and I will honestly give you the cost and deadline.</span></p>
 </section>
@@ -138,6 +62,18 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 24px}
  </div>
 </section>
 
+<section id="details">
+ <h2><span lang="uk">Докладніше про послуги та ціни</span><span lang="en">More about services and prices</span></h2>
+ <div class="panels">
+  <details class="panel" id="d-bots"><summary><span lang="uk">Боти</span><span lang="en">Bots</span></summary><p><span lang="uk">Telegram- і Discord-боти: головне меню з кнопками, автовідповіді на часті питання, прийом заявок і замовлень, сповіщення вам у чат, запис клієнтів, збереження даних у Google Таблиці. Ви отримуєте робочого бота, вихідний код і коротку інструкцію, як його запускати.</span><span lang="en">Telegram and Discord bots: a main menu with buttons, auto replies to common questions, order and request forms, notifications to your chat, client booking and saving data to Google Sheets. You get a working bot, the source code and a short guide on how to run it.</span></p></details>
+  <details class="panel" id="d-sites"><summary><span lang="uk">Сайти-візитки</span><span lang="en">One-page sites</span></summary><p><span lang="uk">Одна адаптивна сторінка про вас чи ваш бізнес: опис, послуги, ціни, контакти та форма заявки. Добре виглядає на телефоні й комп’ютері. Ви надаєте тексти та приклади сайтів, які вам подобаються, а я роблю дизайн і верстку.</span><span lang="en">A single responsive page about you or your business: description, services, prices, contacts and a request form. It looks good on phones and computers. You provide the texts and examples of sites you like, and I do the design and layout.</span></p></details>
+  <details class="panel" id="d-scripts"><summary><span lang="uk">Скрипти</span><span lang="en">Scripts</span></summary><p><span lang="uk">Невеликі програми на Python, які беруть на себе рутину: обробка Excel і CSV, сортування й перейменування файлів, збір відкритих даних із сайтів, робота з таблицями. Ви отримуєте скрипт із коментарями та інструкцією. Працюю лише із законними завданнями та відкритими даними.</span><span lang="en">Small Python programs that take over routine work: Excel and CSV processing, sorting and renaming files, collecting public data from websites, working with spreadsheets. You get the script with comments and instructions. I only take legal tasks and public data.</span></p></details>
+  <details class="panel" id="p-simple"><summary><span lang="uk">Простий бот: від $10</span><span lang="en">Simple bot: from $10</span></summary><p><span lang="uk">Бот із головним меню, до 5 команд і автовідповідями. Входять вихідний код і 1 правка після здачі, термін 2-4 дні. Підходить для візитки, FAQ або простих відповідей клієнтам. Остаточну ціну називаю після опису завдання.</span><span lang="en">A bot with a main menu, up to 5 commands and auto replies. Includes the source code and 1 revision after delivery, 2-4 days. Good for a business card, FAQ or simple customer replies. I give the final price after you describe the task.</span></p></details>
+  <details class="panel" id="p-order"><summary><span lang="uk">Бот із заявками: від $25</span><span lang="en">Order bot: from $25</span></summary><p><span lang="uk">Усе з простого бота, а також форма замовлення чи заявки та сповіщення власнику в чат. Можна додати другу мову. 2 правки, термін 3-5 днів. Остаточна ціна залежить від кількості кроків у формі.</span><span lang="en">Everything from the simple bot, plus an order or request form and notifications to the owner’s chat. A second language can be added. 2 revisions, 3-5 days. The final price depends on the number of steps in the form.</span></p></details>
+  <details class="panel" id="p-site"><summary><span lang="uk">Сайт-візитка: від $20</span><span lang="en">One-page site: from $20</span></summary><p><span lang="uk">Одна адаптивна сторінка з формою заявки. Термін 3-6 днів, 1-2 правки. Ціна залежить від кількості блоків і від того, чи є в наявності готові тексти та зображення.</span><span lang="en">One responsive page with a request form. 3-6 days, 1-2 revisions. The price depends on the number of blocks and on whether you have ready texts and images.</span></p></details>
+ </div>
+</section>
+
 <section id="contact">
  <div class="contact">
   <h2><span lang="uk">Маєте ідею?</span><span lang="en">Got an idea?</span></h2>
@@ -148,22 +84,6 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 24px}
 
 <footer>© Code Dev</footer>
 </div>
-<script>
-(function(){
- var r=document.documentElement;
- try{var l=localStorage.getItem('lang');if(l)r.lang=l;var t=localStorage.getItem('theme');if(t)r.setAttribute('data-theme',t)}catch(e){}
- if(!r.getAttribute('data-theme')){r.setAttribute('data-theme',matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}
- document.getElementById('lang').onclick=function(){r.lang=r.lang==='uk'?'en':'uk';try{localStorage.setItem('lang',r.lang)}catch(e){}};
- document.getElementById('theme').onclick=function(){
-  var dark=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
-  var n=dark?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}
- };
- var els=document.querySelectorAll('.card,.steps div,.contact,section h2,.note');
- if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.style.transitionDelay=''},1000)}})},{threshold:.15});
-  els.forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=((i%3)*0.1)+'s';io.observe(el)});
- }
-})();
-</script>
+<script src="script.js"></script>
 </body>
 </html>
