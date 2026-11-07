@@ -4,65 +4,71 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Code Dev | боти, сайти, скрипти</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Cpath d='M24 20L12 32l12 12M40 20l12 12-12 12M36 14l-8 36' fill='none' stroke='%23ececec' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f2a33a'/%3E%3Cpath d='M24 20L12 32l12 12M40 20l12 12-12 12M36 14l-8 36' fill='none' stroke='%231c1613' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="shell" id="top">
 
-<header class="bar">
- <a class="logo" href="#top" aria-label="Code Dev"><svg viewBox="0 0 64 40"><path d="M18 8L4 20l14 12M46 8l14 12-14 12M36 4L28 36"/></svg></a>
- <button id="open" class="icon-btn" type="button" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 44 24"><path d="M2 4h40M12 12h30M22 20h20"/></svg></button>
-</header>
+<div class="hero">
+ <div class="nav">
+  <a class="logo" href="#top"><svg viewBox="0 0 64 40"><path d="M18 8L4 20l14 12M46 8l14 12-14 12M36 4L28 36"/></svg><b>Code Dev</b></a>
+  <nav class="links" id="links">
+   <a href="#services"><span lang="uk">Послуги</span><span lang="en">Services</span></a>
+   <a href="#prices"><span lang="uk">Ціни</span><span lang="en">Prices</span></a>
+   <a href="#how"><span lang="uk">Як працюю</span><span lang="en">How I work</span></a>
+   <a href="#contact"><span lang="uk">Контакти</span><span lang="en">Contact</span></a>
+  </nav>
+  <div class="right">
+   <a class="tg" href="https://t.me/melovetee" rel="noopener">@melovetee</a>
+   <button id="lang" class="pill" type="button">UA / EN</button>
+   <button id="theme" class="ib" type="button" aria-label="Theme"><svg class="moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+   <a class="btn sm" href="#contact"><span lang="uk">Замовити</span><span lang="en">Order</span></a>
+   <button id="burger" class="ib" type="button" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+ </div>
 
-<div class="menu" id="menu" aria-hidden="true">
- <button id="close" class="icon-btn close" type="button" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M3 3l18 18M21 3L3 21"/></svg></button>
- <nav>
-  <a href="#services"><span lang="uk">Послуги</span><span lang="en">Services</span></a>
-  <a href="#prices"><span lang="uk">Ціни</span><span lang="en">Prices</span></a>
-  <a href="#how"><span lang="uk">Як я працюю</span><span lang="en">How I work</span></a>
-  <a href="#contact"><span lang="uk">Контакт</span><span lang="en">Contact</span></a>
- </nav>
- <div class="foot">
-  <button id="lang" type="button">UA / EN</button>
-  <button id="theme" type="button"><span lang="uk">Світла / темна</span><span lang="en">Light / dark</span></button>
-  <a href="https://t.me/melovetee" rel="noopener">Telegram</a>
+ <div class="hgrid">
+  <div>
+   <p class="tag">Telegram · Discord · Web</p>
+   <h1><span lang="uk">Розробка ботів, сайтів і скриптів</span><span lang="en">Bots, websites and scripts</span></h1>
+   <p class="lead"><span lang="uk">Роблю Telegram- і Discord-ботів, прості сайти та скрипти, які беруть на себе нудну роботу. Код віддаю з коротким поясненням, як усе запустити. Якщо чогось не вмію, скажу одразу.</span><span lang="en">I make Telegram and Discord bots, simple websites and scripts that take over boring work. I hand over the code with a short explanation of how to run it. If I can’t do something, I’ll say so right away.</span></p>
+   <a class="btn" href="#contact"><span lang="uk">Замовити</span><span lang="en">Order</span></a>
+  </div>
+  <div class="vis" aria-hidden="true">
+   <div class="phone">
+    <div class="ph-top"><span class="dot">B</span>Code Dev Bot</div>
+    <div class="msg me m1">/start</div>
+    <div class="msg bot m2">Hi! What do you need?<div class="kb"><i>Menu</i><i>Order</i><i>FAQ</i></div></div>
+    <div class="msg me m3">Order</div>
+    <div class="msg bot m4">Done, request sent.</div>
+   </div>
+  </div>
  </div>
 </div>
 
-<main id="top">
-<section class="hero">
- <p class="kicker">Code Dev</p>
- <p class="intro"><span lang="uk">Пишу ботів для Telegram і Discord, роблю прості сайти та скрипти, які беруть на себе нудну роботу. Якщо чогось не вмію, скажу одразу.</span><span lang="en">I write bots for Telegram and Discord and build simple websites and scripts that take over boring work. If I can’t do something, I’ll say so right away.</span></p>
- <a class="ghost" href="#contact"><span lang="uk">Замовити</span><span lang="en">Order</span></a>
- <span class="cue"></span>
-</section>
-
 <section class="sec" id="services">
- <h2 class="kicker"><span lang="uk">Послуги</span><span lang="en">Services</span></h2>
- <p class="lead"><span lang="uk">Невеликі проєкти, які я можу зробити сам, протестувати й пояснити, як вони працюють.</span><span lang="en">Small projects I can build myself, test and explain how they work.</span></p>
- <div class="grid">
-  <div><svg viewBox="0 0 64 64"><path d="M6 29L58 8L47 56L31 42L23 52L22 37Z"/><path d="M22 37L58 8M31 42L22 37"/></svg><p><span lang="uk">Telegram-боти</span><span lang="en">Telegram bots</span></p></div>
-  <div><svg viewBox="0 0 64 64"><path d="M10 14h44a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H30L18 56V46h-8a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z"/><circle cx="22" cy="30" r="2"/><circle cx="32" cy="30" r="2"/><circle cx="42" cy="30" r="2"/></svg><p><span lang="uk">Discord-боти</span><span lang="en">Discord bots</span></p></div>
-  <div><svg viewBox="0 0 64 64"><rect x="6" y="10" width="52" height="44" rx="3"/><path d="M6 22h52M14 32h20M14 40h30M14 47h14"/><circle cx="13" cy="16" r="1.5"/><circle cx="19" cy="16" r="1.5"/></svg><p><span lang="uk">Сайти-візитки</span><span lang="en">One-page sites</span></p></div>
-  <div><svg viewBox="0 0 64 64"><rect x="6" y="10" width="52" height="44" rx="3"/><path d="M16 26l10 8-10 8M32 44h16"/></svg><p><span lang="uk">Скрипти</span><span lang="en">Scripts</span></p></div>
-  <div><svg viewBox="0 0 64 64"><rect x="8" y="10" width="48" height="44" rx="2"/><path d="M8 24h48M8 38h48M24 10v44M40 10v44"/></svg><p><span lang="uk">Таблиці</span><span lang="en">Spreadsheets</span></p></div>
-  <div><svg viewBox="0 0 64 64"><path d="M22 18L8 32l14 14M42 18l14 14-14 14M36 12L28 52"/></svg><p><span lang="uk">Доробки коду</span><span lang="en">Code fixes</span></p></div>
+ <h2><span lang="uk">Послуги</span><span lang="en">Services</span></h2>
+ <div class="cards">
+  <div class="c"><span class="n">01</span><h3><span lang="uk">Боти</span><span lang="en">Bots</span></h3><p><span lang="uk">Telegram і Discord: меню, кнопки, автовідповіді, FAQ, прийом заявок, сповіщення вам у чат, звʼязок із Google Таблицями.</span><span lang="en">Telegram and Discord: menus, buttons, auto replies, FAQ, order forms, notifications to your chat, Google Sheets.</span></p></div>
+  <div class="c"><span class="n">02</span><h3><span lang="uk">Сайти-візитки</span><span lang="en">One-page sites</span></h3><p><span lang="uk">Одна адаптивна сторінка з формою заявки. Нормально виглядає і на телефоні, і на комп’ютері.</span><span lang="en">One responsive page with a request form. Looks fine on both phones and computers.</span></p></div>
+  <div class="c"><span class="n">03</span><h3><span lang="uk">Скрипти</span><span lang="en">Scripts</span></h3><p><span lang="uk">Python: обробка Excel і CSV, сортування файлів, збір відкритих даних, автоматизація рутини.</span><span lang="en">Python: Excel and CSV processing, file sorting, public data collection, routine automation.</span></p></div>
  </div>
 </section>
 
 <section class="sec" id="prices">
- <h2 class="kicker"><span lang="uk">Ціни</span><span lang="en">Prices</span></h2>
- <div class="plist">
-  <div class="price"><div class="top"><b><span lang="uk">Простий бот</span><span lang="en">Simple bot</span></b><i class="dots"></i><b class="p"><span lang="uk">від</span><span lang="en">from</span> $10</b></div><p class="sub"><span lang="uk">Меню, до 5 команд, вихідний код. 2-4 дні.</span><span lang="en">Menu, up to 5 commands, source code. 2-4 days.</span></p></div>
-  <div class="price"><div class="top"><b><span lang="uk">Бот із заявками</span><span lang="en">Order bot</span></b><i class="dots"></i><b class="p"><span lang="uk">від</span><span lang="en">from</span> $25</b></div><p class="sub"><span lang="uk">Форма заявки та сповіщення вам у чат. 3-5 днів.</span><span lang="en">Request form and notifications to your chat. 3-5 days.</span></p></div>
-  <div class="price"><div class="top"><b><span lang="uk">Сайт-візитка</span><span lang="en">One-page site</span></b><i class="dots"></i><b class="p"><span lang="uk">від</span><span lang="en">from</span> $20</b></div><p class="sub"><span lang="uk">Адаптивна сторінка з формою заявки. 3-6 днів.</span><span lang="en">Responsive page with a request form. 3-6 days.</span></p></div>
-  <div class="price"><div class="top"><b><span lang="uk">Скрипт</span><span lang="en">Script</span></b><i class="dots"></i><b class="p"><span lang="uk">від</span><span lang="en">from</span> $10</b></div><p class="sub"><span lang="uk">Обробка файлів і таблиць. 1-4 дні.</span><span lang="en">File and spreadsheet processing. 1-4 days.</span></p></div>
+ <h2><span lang="uk">Ціни</span><span lang="en">Prices</span></h2>
+ <div class="cards four">
+  <div class="c"><h3><span lang="uk">Простий бот</span><span lang="en">Simple bot</span></h3><div class="pr"><small><span lang="uk">від</span><span lang="en">from</span></small> $10</div><p><span lang="uk">Меню, до 5 команд, вихідний код. 2-4 дні.</span><span lang="en">Menu, up to 5 commands, source code. 2-4 days.</span></p></div>
+  <div class="c"><h3><span lang="uk">Бот із заявками</span><span lang="en">Order bot</span></h3><div class="pr"><small><span lang="uk">від</span><span lang="en">from</span></small> $25</div><p><span lang="uk">Форма заявки та сповіщення вам у чат. 3-5 днів.</span><span lang="en">Request form and notifications to your chat. 3-5 days.</span></p></div>
+  <div class="c"><h3><span lang="uk">Сайт-візитка</span><span lang="en">One-page site</span></h3><div class="pr"><small><span lang="uk">від</span><span lang="en">from</span></small> $20</div><p><span lang="uk">Адаптивна сторінка з формою заявки. 3-6 днів.</span><span lang="en">Responsive page with a request form. 3-6 days.</span></p></div>
+  <div class="c"><h3><span lang="uk">Скрипт</span><span lang="en">Script</span></h3><div class="pr"><small><span lang="uk">від</span><span lang="en">from</span></small> $10</div><p><span lang="uk">Обробка файлів і таблиць. 1-4 дні.</span><span lang="en">File and spreadsheet processing. 1-4 days.</span></p></div>
  </div>
  <p class="note"><span lang="uk">Точна ціна залежить від завдання. Напишіть, що потрібно, і я чесно скажу вартість та терміни.</span><span lang="en">The exact price depends on the task. Tell me what you need and I’ll honestly give you the cost and deadline.</span></p>
 </section>
 
 <section class="sec" id="how">
- <h2 class="kicker"><span lang="uk">Як я працюю</span><span lang="en">How I work</span></h2>
+ <h2><span lang="uk">Як я працюю</span><span lang="en">How I work</span></h2>
  <div class="steps">
   <details class="step"><summary><span lang="uk">Ви описуєте задачу</span><span lang="en">You describe the task</span></summary><p><span lang="uk">Напишіть, що вам потрібно: для чого бот чи сайт, які кнопки або сторінки потрібні, чи є тексти та приклади, які вам подобаються. Чим більше деталей, тим точніша ціна.</span><span lang="en">Tell me what you need: what the bot or site is for, which buttons or pages you want, and whether you have texts and examples you like. The more details, the more accurate the price.</span></p></details>
   <details class="step"><summary><span lang="uk">Я кажу, чи зможу, і скільки це коштує</span><span lang="en">I tell you if I can do it and what it costs</span></summary><p><span lang="uk">Чесно скажу, чи візьмуся, і назву ціну та термін. Якщо щось поза моїми навичками, повідомлю до початку роботи. Оплату обговорюємо частинами: частина на старті, решта після здачі.</span><span lang="en">I’ll honestly say whether I’ll take it, and give a price and deadline. If something is outside my skills, I’ll tell you before I start. We agree on payment in parts: some at the start and the rest after delivery.</span></p></details>
@@ -72,13 +78,15 @@
 </section>
 
 <section class="sec" id="contact">
- <h2 class="kicker"><span lang="uk">Контакт</span><span lang="en">Contact</span></h2>
- <p class="big"><span lang="uk">Є ідея? Напишіть мені.</span><span lang="en">Got an idea? Write to me.</span></p>
- <a class="ghost" href="https://t.me/melovetee" rel="noopener">Telegram @melovetee</a>
+ <div class="cta">
+  <h2><span lang="uk">Є ідея? Напишіть мені</span><span lang="en">Got an idea? Write to me</span></h2>
+  <p><span lang="uk">Розкажіть, що потрібно, і я відповім, чи можу це зробити, за скільки і як швидко.</span><span lang="en">Tell me what you need and I’ll answer whether I can do it, for how much and how fast.</span></p>
+  <a class="btn" href="https://t.me/melovetee" rel="noopener">Telegram @melovetee</a>
+ </div>
 </section>
-</main>
 
 <footer>© Code Dev</footer>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
