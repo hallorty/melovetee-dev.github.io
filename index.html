@@ -74,6 +74,13 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 24px}
 #theme .sun{display:none}
 :root[data-theme="dark"] #theme .sun{display:block}
 :root[data-theme="dark"] #theme .moon{display:none}
+.steps div::before{top:15px;transform:none}
+.steps details summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:30px}
+.steps details summary::-webkit-details-marker{display:none}
+.steps details summary::after{content:"+";color:var(--a1);font-weight:800;font-size:22px;line-height:1;transition:transform .3s ease}
+.steps details[open] summary::after{transform:rotate(45deg)}
+.steps details p{margin:10px 0 2px;color:var(--muted);animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -114,9 +121,9 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 24px}
 <section id="prices">
  <h2><span lang="uk">Ціни</span><span lang="en">Pricing</span></h2>
  <div class="grid">
-  <div class="card"><h3><span lang="uk">Простий бот</span><span lang="en">Simple bot</span></h3><div class="price">$10 <small><span lang="uk">від</span><span lang="en">from</span></small></div><ul><li><span lang="uk">Меню та до 5 команд</span><span lang="en">Menu and up to 5 commands</span></li><li><span lang="uk">Вихідний код</span><span lang="en">Source code</span></li><li><span lang="uk">2-4 дні</span><span lang="en">2-4 days</span></li></ul></div>
-  <div class="card"><h3><span lang="uk">Бот із заявками</span><span lang="en">Order bot</span></h3><div class="price">$25 <small><span lang="uk">від</span><span lang="en">from</span></small></div><ul><li><span lang="uk">Прийом заявок</span><span lang="en">Order and request form</span></li><li><span lang="uk">Сповіщення власнику</span><span lang="en">Owner notifications</span></li><li><span lang="uk">3-5 днів</span><span lang="en">3-5 days</span></li></ul></div>
-  <div class="card"><h3><span lang="uk">Сайт-візитка</span><span lang="en">One-page site</span></h3><div class="price">$20 <small><span lang="uk">від</span><span lang="en">from</span></small></div><ul><li><span lang="uk">Адаптивна сторінка</span><span lang="en">Responsive page</span></li><li><span lang="uk">Форма заявки</span><span lang="en">Request form</span></li><li><span lang="uk">3-6 днів</span><span lang="en">3-6 days</span></li></ul></div>
+  <div class="card"><h3><span lang="uk">Простий бот</span><span lang="en">Simple bot</span></h3><div class="price"><small><span lang="uk">від</span><span lang="en">from</span></small> $10</div><ul><li><span lang="uk">Меню та до 5 команд</span><span lang="en">Menu and up to 5 commands</span></li><li><span lang="uk">Вихідний код</span><span lang="en">Source code</span></li><li><span lang="uk">2-4 дні</span><span lang="en">2-4 days</span></li></ul></div>
+  <div class="card"><h3><span lang="uk">Бот із заявками</span><span lang="en">Order bot</span></h3><div class="price"><small><span lang="uk">від</span><span lang="en">from</span></small> $25</div><ul><li><span lang="uk">Прийом заявок</span><span lang="en">Order and request form</span></li><li><span lang="uk">Сповіщення власнику</span><span lang="en">Owner notifications</span></li><li><span lang="uk">3-5 днів</span><span lang="en">3-5 days</span></li></ul></div>
+  <div class="card"><h3><span lang="uk">Сайт-візитка</span><span lang="en">One-page site</span></h3><div class="price"><small><span lang="uk">від</span><span lang="en">from</span></small> $20</div><ul><li><span lang="uk">Адаптивна сторінка</span><span lang="en">Responsive page</span></li><li><span lang="uk">Форма заявки</span><span lang="en">Request form</span></li><li><span lang="uk">3-6 днів</span><span lang="en">3-6 days</span></li></ul></div>
  </div>
  <p class="note"><span lang="uk">Точна ціна залежить від завдання. Напишіть, що потрібно, і я чесно скажу вартість та терміни.</span><span lang="en">The exact price depends on the task. Tell me what you need and I will honestly give you the cost and deadline.</span></p>
 </section>
@@ -124,10 +131,10 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 24px}
 <section>
  <h2><span lang="uk">Як це працює</span><span lang="en">How it works</span></h2>
  <div class="steps">
-  <div><span lang="uk">Ви описуєте задачу в повідомленні</span><span lang="en">You describe your task in a message</span></div>
-  <div><span lang="uk">Я підтверджую, що можу зробити, і називаю ціну та термін</span><span lang="en">I confirm what I can do and give a price and deadline</span></div>
-  <div><span lang="uk">Роблю роботу та показую результат</span><span lang="en">I do the work and show you the result</span></div>
-  <div><span lang="uk">Вношу домовлені правки й передаю код з інструкцією</span><span lang="en">I make the agreed revisions and hand over the code with a guide</span></div>
+  <div><details><summary><span lang="uk">Ви описуєте задачу в повідомленні</span><span lang="en">You describe your task in a message</span></summary><p><span lang="uk">Напишіть, що вам потрібно: для чого бот чи сайт, які кнопки або сторінки потрібні, чи є тексти та приклади, які вам подобаються. Чим більше деталей, тим точніша ціна й швидший результат.</span><span lang="en">Tell me what you need: what the bot or site is for, which buttons or pages you want, and whether you have texts and examples you like. The more details, the more accurate the price and the faster the result.</span></p></details></div>
+  <div><details><summary><span lang="uk">Я підтверджую, що можу зробити, і називаю ціну та термін</span><span lang="en">I confirm what I can do and give a price and deadline</span></summary><p><span lang="uk">Я чесно скажу, чи зможу виконати завдання, і назву остаточну ціну та терміни. Якщо щось поза моїми навичками, повідомлю одразу, до початку роботи. Оплату обговорюємо наперед, наприклад частинами: частина на старті, решта після здачі.</span><span lang="en">I will honestly tell you if I can do the task and give the final price and deadline. If something is outside my skills, I will say so before starting. We agree on payment in advance, for example in parts: one part at the start and the rest after delivery.</span></p></details></div>
+  <div><details><summary><span lang="uk">Роблю роботу та показую результат</span><span lang="en">I do the work and show you the result</span></summary><p><span lang="uk">Створюю бота, сайт або скрипт і перевіряю, що все працює. Показую проміжний результат, щоб ви могли побачити його до завершення й сказати, що змінити.</span><span lang="en">I build the bot, site or script and check that everything works. I show you a preview so you can see it before it is finished and tell me what to change.</span></p></details></div>
+  <div><details><summary><span lang="uk">Вношу домовлені правки й передаю код з інструкцією</span><span lang="en">I make the agreed revisions and hand over the code with a guide</span></summary><p><span lang="uk">Вношу правки, про які ми домовилися, і передаю готову роботу: вихідний код та коротку інструкцію, як запускати й користуватися. Якщо щось незрозуміло, допоможу розібратися.</span><span lang="en">I make the revisions we agreed on and hand over the finished work: the source code and a short guide on how to run and use it. If anything is unclear, I will help you figure it out.</span></p></details></div>
  </div>
 </section>
 
